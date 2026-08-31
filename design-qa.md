@@ -16,13 +16,20 @@
 | 1 | 320 to 1440 | Portrait entrance transform temporarily created 2 to 3px of horizontal overflow | Replaced horizontal translation with a clipped image reveal |
 | 2 | 1136 x 1024 | Desktop composition matched the selected hierarchy with the requested smaller header | Passed |
 | 2 | 372 x 1024 | Mobile title, actions, and portrait followed the selected sequence without excess empty space | Passed |
+| 3 | 1440 x 900 | Text-only works and oversized lesson steps left too much unused desktop space | Added a four-cover editorial shelf and fit all six lesson steps into one viewport |
+| 3 | 1440 x 900 | The standalone expertise and collaboration sections added low-density screens | Removed the requested expertise section and combined collaboration with contact |
+| 3 | 1440 x 900 | A partial wheel movement could leave the next topic between sections | Added desktop-only mandatory scroll snapping with one topic per viewport |
+| 3 | 320 to 768 | Full-screen snapping would make touch scrolling feel constrained | Kept natural mobile and tablet scrolling with a two-column book shelf |
 
 ## Responsive and interaction checks
 
 - Checked at 1440, 1024, 768, 390, and 320px
 - Horizontal overflow: 0px at every checked viewport
 - Mobile navigation fills the available viewport, locks background scrolling, closes cleanly, and exposes the primary Instagram action
-- Lesson steps activate one at a time and update the progress indicator while scrolling
+- Desktop lesson steps reveal in a short stagger and remain together in one viewport; mobile steps activate progressively while scrolling
+- At 1440 x 900 the 56px header and 844px hero fill the first viewport exactly; the next section begins at 900px
+- Desktop scroll snapping lands the next topic at 56px below the sticky header and is disabled for reduced motion
+- Four self-hosted AVIF/WebP covers load at their verified 500px source width
 - Education-area controls expose `aria-expanded` and `aria-hidden` state
 - Instagram and telephone links retain their intended destinations
 - Focus-visible and reduced-motion rules are present

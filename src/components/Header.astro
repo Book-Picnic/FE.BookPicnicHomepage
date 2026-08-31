@@ -1,6 +1,5 @@
 ---
 const navItems = [
-  { href: '#about', label: '책나들이 소개' },
   { href: '#works', label: '대표작' },
   { href: '#method', label: '수업 방식' },
   { href: '#book-talk', label: '오늘의 책대화' },
@@ -26,8 +25,8 @@ const navItems = [
 
   <div class="mobile-menu" id="mobile-menu" aria-hidden="true" data-mobile-menu>
     <nav aria-label="모바일 메뉴">
-      {navItems.map((item, index) => (
-        <a href={item.href} style={`--menu-index: ${index}`}>
+      {navItems.map((item) => (
+        <a href={item.href}>
           <span>{item.label}</span>
           <i class="ph ph-arrow-down-right" aria-hidden="true"></i>
         </a>
@@ -39,4 +38,3 @@ const navItems = [
     </a>
   </div>
 </header>
-
