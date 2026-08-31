@@ -9,9 +9,9 @@
 }
 
 :root {
-  --paper: #f3f0e7;
-  --paper-soft: #f7f5ef;
-  --paper-deep: #e8e6dd;
+  --paper: #f8f7f2;
+  --paper-soft: #fcfbf8;
+  --paper-deep: #efefe9;
   --ink: #1b201c;
   --ink-soft: #59605b;
   --forest: #244738;
@@ -116,7 +116,7 @@ h3 {
   z-index: 20;
   height: var(--header-height);
   border-bottom: 1px solid var(--line);
-  background: rgb(243 240 231 / 88%);
+  background: rgb(248 247 242 / 90%);
   backdrop-filter: blur(18px) saturate(130%);
   -webkit-backdrop-filter: blur(18px) saturate(130%);
 }
@@ -531,7 +531,7 @@ h3 {
 
 .works-grid {
   display: grid;
-  margin-top: clamp(36px, 5vw, 60px);
+  margin-top: clamp(32px, 4vw, 46px);
   grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: clamp(22px, 2.6vw, 42px);
 }
@@ -539,6 +539,7 @@ h3 {
 .work-item {
   display: grid;
   min-width: 0;
+  grid-template-rows: auto 1fr;
   align-content: start;
   gap: 22px;
   transition:
@@ -591,18 +592,21 @@ h3 {
 }
 
 .work-copy {
-  display: grid;
-  align-content: start;
+  display: flex;
+  height: 100%;
+  flex-direction: column;
 }
 
 .work-credit {
   margin-bottom: 10px;
+  min-height: 2.8em;
   color: var(--moss);
   font-size: 12px;
   font-weight: 590;
 }
 
 .work-item h3 {
+  min-height: 2.48em;
   font-size: clamp(22px, 2.15vw, 32px);
   font-weight: 680;
   letter-spacing: -0.045em;
@@ -620,7 +624,8 @@ h3 {
 .work-link-label {
   display: inline-flex;
   width: fit-content;
-  margin-top: 18px;
+  margin-top: auto;
+  padding-top: 18px;
   padding-bottom: 4px;
   align-items: center;
   gap: 7px;
@@ -1317,12 +1322,25 @@ h3 {
   }
 
   .method-step {
-    min-height: 72svh;
-    grid-template-columns: 42px minmax(0, 1fr);
+    min-height: 0;
+    padding-block: 32px;
+    grid-template-columns: 38px minmax(0, 1fr);
+    align-content: start;
   }
 
   .method-step h3 {
-    font-size: clamp(42px, 15vw, 66px);
+    font-size: clamp(32px, 9.5vw, 44px);
+    line-height: 1.08;
+  }
+
+  .method-step p {
+    margin-top: 14px;
+    font-size: 15px;
+    line-height: 1.65;
+  }
+
+  .method-index {
+    padding-top: 4px;
   }
 
   .program-toggle {

@@ -20,6 +20,9 @@
 | 3 | 1440 x 900 | The standalone expertise and collaboration sections added low-density screens | Removed the requested expertise section and combined collaboration with contact |
 | 3 | 1440 x 900 | A partial wheel movement could leave the next topic between sections | Added desktop-only mandatory scroll snapping with one topic per viewport |
 | 3 | 320 to 768 | Full-screen snapping would make touch scrolling feel constrained | Kept natural mobile and tablet scrolling with a two-column book shelf |
+| 4 | 320 to 768 | Each mobile lesson step occupied 72% of the viewport and felt excessively tall | Reduced steps to compact content-driven rows with 32px vertical padding |
+| 4 | 320 to 1440 | Book information links shifted vertically with title and description length | Reserved a two-line title block and pinned links to the bottom of each grid row |
+| 4 | 320 to 1440 | The original warm paper surface appeared yellowed on screen | Shifted the base to neutral warm white `#F8F7F2` with lighter supporting surfaces |
 
 ## Responsive and interaction checks
 
@@ -27,9 +30,11 @@
 - Horizontal overflow: 0px at every checked viewport
 - Mobile navigation fills the available viewport, locks background scrolling, closes cleanly, and exposes the primary Instagram action
 - Desktop lesson steps reveal in a short stagger and remain together in one viewport; mobile steps activate progressively while scrolling
+- Mobile lesson rows now show roughly two to three steps per viewport instead of one oversized step
 - At 1440 x 900 the 56px header and 844px hero fill the first viewport exactly; the next section begins at 900px
 - Desktop scroll snapping lands the next topic at 56px below the sticky header and is disabled for reduced motion
 - Four self-hosted AVIF/WebP covers load at their verified 500px source width
+- Book titles and information links share consistent baselines across the desktop row and both mobile rows
 - Education-area controls expose `aria-expanded` and `aria-hidden` state
 - Instagram and telephone links retain their intended destinations
 - Focus-visible and reduced-motion rules are present
