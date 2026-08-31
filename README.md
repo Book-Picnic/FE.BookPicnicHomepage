@@ -29,4 +29,6 @@ npm run verify
 
 대표작 표지는 권리자가 제공·승인한 공개용 자산을 AVIF/WebP로 자체 호스팅하며 외부 이미지 핫링크는 사용하지 않는다. 도서 정보 링크는 YES24 종이책 상품 페이지로 연결한다.
 
+브랜드 파비콘은 펼친 책의 중앙 여백이 산책길로 이어지는 책나들이 전용 심볼이다. SVG를 정본으로 두고 16px, 32px, 64px, Apple touch icon을 `scripts/generate-brand-icons.mjs`로 생성한다.
+
 Docs of Truth 분류: `NOT_APPLICABLE`. 이 저장소는 API, 데이터, 인증, 서비스 간 흐름을 소유하지 않는 정적 마케팅 페이지다.

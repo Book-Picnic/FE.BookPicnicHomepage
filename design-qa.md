@@ -23,6 +23,7 @@
 | 4 | 320 to 768 | Each mobile lesson step occupied 72% of the viewport and felt excessively tall | Reduced steps to compact content-driven rows with 32px vertical padding |
 | 4 | 320 to 1440 | Book information links shifted vertically with title and description length | Reserved a two-line title block and pinned links to the bottom of each grid row |
 | 4 | 320 to 1440 | The original warm paper surface appeared yellowed on screen | Shifted the base to neutral warm white `#F8F7F2` with lighter supporting surfaces |
+| 5 | 16 to 180 | The profile-photo favicon overemphasized the person and lost recognition at tab size | Replaced it with a dedicated open-book and walking-path brand symbol |
 
 ## Responsive and interaction checks
 
@@ -35,6 +36,7 @@
 - Desktop scroll snapping lands the next topic at 56px below the sticky header and is disabled for reduced motion
 - Four self-hosted AVIF/WebP covers load at their verified 500px source width
 - Book titles and information links share consistent baselines across the desktop row and both mobile rows
+- Brand icon remains recognizable at 16px and uses the same forest and warm-white tokens as the site
 - Education-area controls expose `aria-expanded` and `aria-hidden` state
 - Instagram and telephone links retain their intended destinations
 - Focus-visible and reduced-motion rules are present
