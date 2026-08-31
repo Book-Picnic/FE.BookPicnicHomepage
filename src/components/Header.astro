@@ -1,0 +1,42 @@
+---
+const navItems = [
+  { href: '#about', label: '책나들이 소개' },
+  { href: '#works', label: '대표작' },
+  { href: '#method', label: '수업 방식' },
+  { href: '#book-talk', label: '오늘의 책대화' },
+  { href: '#contact', label: '문의' },
+];
+---
+
+<header class="site-header" data-header>
+  <div class="header-inner">
+    <a class="brand" href="#top" aria-label="책나들이 홈">
+      <span class="brand-ko">책나들이</span>
+      <span class="brand-en">BOOKPICNIC</span>
+    </a>
+
+    <nav class="desktop-nav" aria-label="주요 메뉴">
+      {navItems.map((item) => <a href={item.href}>{item.label}</a>)}
+    </nav>
+
+    <button class="menu-button" type="button" aria-label="메뉴 열기" aria-expanded="false" aria-controls="mobile-menu" data-menu-button>
+      <i class="ph ph-list" aria-hidden="true"></i>
+    </button>
+  </div>
+
+  <div class="mobile-menu" id="mobile-menu" aria-hidden="true" data-mobile-menu>
+    <nav aria-label="모바일 메뉴">
+      {navItems.map((item, index) => (
+        <a href={item.href} style={`--menu-index: ${index}`}>
+          <span>{item.label}</span>
+          <i class="ph ph-arrow-down-right" aria-hidden="true"></i>
+        </a>
+      ))}
+    </nav>
+    <a class="menu-contact" href="https://www.instagram.com/gogo_bookpicnic/" target="_blank" rel="noreferrer">
+      Instagram DM으로 문의
+      <i class="ph ph-arrow-up-right" aria-hidden="true"></i>
+    </a>
+  </div>
+</header>
+

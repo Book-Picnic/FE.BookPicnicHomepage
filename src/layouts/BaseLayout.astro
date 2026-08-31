@@ -1,0 +1,73 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description: string;
+  canonical?: string;
+}
+
+const {
+  title,
+  description,
+  canonical = 'https://bookpicnic.kr/',
+} = Astro.props;
+
+const structuredData = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  name: '김윤정',
+  alternateName: 'Yoonjung Kim',
+  url: 'https://bookpicnic.kr/',
+  image: 'https://bookpicnic.kr/images/profile/bookpicnic-og.jpg',
+  jobTitle: ['저자', '북에디터', '교육자'],
+  worksFor: {
+    '@type': 'EducationalOrganization',
+    name: '아이중심독서교육연구소 책나들이',
+    url: 'https://bookpicnic.kr/',
+  },
+  sameAs: [
+    'https://www.instagram.com/gogo_bookpicnic/',
+    'https://www.instagram.com/6a_space/',
+    'https://www.aladin.co.kr/author/wauthor_overview.aspx?AuthorSearch=@2491076',
+  ],
+};
+---
+
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#f3f0e7" />
+    <meta name="color-scheme" content="light" />
+    <meta name="description" content={description} />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <script is:inline>document.documentElement.classList.add('js');</script>
+    <link rel="canonical" href={canonical} />
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="preload" href="/fonts/PretendardVariable.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/images/profile/kim-yoonjung-hero-1280.avif" as="image" type="image/avif" media="(min-width: 768px)" />
+    <title>{title}</title>
+
+    <meta property="og:locale" content="ko_KR" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="책나들이" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content="https://bookpicnic.kr/images/profile/bookpicnic-og.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="책나들이 김윤정 대표 프로필" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content="https://bookpicnic.kr/images/profile/bookpicnic-og.jpg" />
+    <script is:inline type="application/ld+json" set:html={JSON.stringify(structuredData)} />
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>

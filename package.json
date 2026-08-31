@@ -1,0 +1,25 @@
+{
+  "name": "bookpicnic-homepage",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "packageManager": "npm@11.6.2",
+  "scripts": {
+    "dev": "ASTRO_TELEMETRY_DISABLED=1 astro dev",
+    "check": "ASTRO_TELEMETRY_DISABLED=1 astro check",
+    "lint": "node scripts/audit-public-content.mjs --source",
+    "build": "ASTRO_TELEMETRY_DISABLED=1 astro build && node scripts/audit-public-content.mjs --dist && node scripts/check-links.mjs",
+    "preview": "ASTRO_TELEMETRY_DISABLED=1 astro preview",
+    "verify": "npm run check && npm run lint && npm run build"
+  },
+  "dependencies": {
+    "@phosphor-icons/web": "^2.1.2",
+    "astro": "^5.0.0"
+  },
+  "devDependencies": {
+    "@astrojs/check": "^0.9.0",
+    "pretendard": "^1.3.9",
+    "sharp": "^0.34.0",
+    "typescript": "^5.9.0"
+  }
+}
